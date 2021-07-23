@@ -1,0 +1,30 @@
+
+/* BACKGROUNDS */
+
+#blueBackground {
+  background-color: #45a3e5;
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+
+#greenBackground {
+  background-color: #66bf39;
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+
+#redBackground {
+  background-color: #ff3355;
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+
+#purpleBackground {
+  background-color: #864cbf;
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}

@@ -1,0 +1,12 @@
+
+#footer {
+    align-items: center;
+    display: flex;
+    height: 4em;
+    justify-content: center;
+    width: 100vw;
+}
+
+#copyright {
+    text-align: center;
+}
