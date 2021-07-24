@@ -1,0 +1,33 @@
+#content {
+    font-size: 1.3em;
+    font-weight: Bold;
+    padding-top: 1.2 em;
+    text-align: center;
+}
+
+#sendBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#questionInput {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    width: 70vw;
+}
+
+@media only screen and (max-width: 575.98px) {
+    #sendBtn {
+        width: 70vw;
+    }
+
+    #content {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 2em;
+        width: 75vw;
+    }
+ }

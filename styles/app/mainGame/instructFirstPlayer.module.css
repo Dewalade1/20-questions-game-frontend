@@ -1,10 +1,3 @@
-#mainTitle {
-    font-family: 'Otomanopee One', sans-serif;
-    font-size: 70px;
-    padding-top: 110px;
-    text-align: center;
-}
-
 #mainContent {
     padding-top: 3em;
     height: 30vh;
@@ -24,15 +17,3 @@
 #ready {
     color: #66BF39
 }
-
-@media only screen and (max-width: 767.98px) {
-    #mainTitle {
-        font-size: 50px;
-    }
-}
-
-@media only screen and (max-width: 575.98px) {
-    #mainTitle {
-        font-size: 40px;
-    }
- }

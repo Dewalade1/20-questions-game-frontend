@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from '../../../styles/app/mainGame/instructFirstPlayer.module.css'
 
-import { DarkButton } from "../../UIComponents/buttons"
+import { DarkButton } from '../../UIComponents/buttons'
 
 const InstructFirstPlayer = ({firstPlayer, secondPlayer, mainGameState, setMainGameState }) => {
 
@@ -14,7 +14,7 @@ const InstructFirstPlayer = ({firstPlayer, secondPlayer, mainGameState, setMainG
 
     return(
         <>
-            <div id={styles.mainTitle}>{firstPlayer}&apos;s turn</div>
+            <div className='mainTitle'>{firstPlayer}&apos;s turn</div>
             <div id={styles.mainContent}>
             <p className={styles.text}> You are the first player</p>
             <p className={styles.text}> Think of a word and when you are ready click the <span id={styles.ready}>&apos;Ready&apos;</span> button</p>

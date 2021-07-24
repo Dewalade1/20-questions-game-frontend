@@ -1,6 +1,7 @@
 import React from 'react'
 import { useImmer } from 'use-immer'
 
+import SecondPlayerQuestion from './mainGame/secondPlayerQuestion'
 import InstructFirstPlayer from './mainGame/instructFirstPlayer'
 
 const MainGame = ({gameState, changeState}) => {
@@ -17,8 +18,9 @@ const MainGame = ({gameState, changeState}) => {
     return(
         <>
             { mainGameState.currentStage == "STAGE_1" ?
-            <InstructFirstPlayer firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} /> :
-            // mainGameState.currentStage = "STAGE_2" ? (<SecondPlayerGuess />) :
+                <InstructFirstPlayer firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} /> :
+            mainGameState.currentStage == "STAGE_2" ? 
+                (<SecondPlayerQuestion secondPlayer={secondPlayer} firstPlayer={firstPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState}/>) :
              ('')
             }
         </>

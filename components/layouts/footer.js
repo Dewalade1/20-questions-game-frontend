@@ -5,7 +5,7 @@ const Footer = () => {
     return( 
         <div id={styles.footer}>
             <div id={styles.copyright}>
-                © Dewalade All Rights Reserved
+                ©2021 Dewalade.  All Rights Reserved
             </div>
         </div>
     )

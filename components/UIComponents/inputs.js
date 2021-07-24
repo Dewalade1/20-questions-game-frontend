@@ -19,12 +19,14 @@ const DefaultInput = styled.input`
     ::placeholder,
     ::-webkit-input-placeholder {
         color: #afafaf;
+        font-size: 1.2em;
         font-weight: bold;
         text-align: center;
     }
 
     :-ms-input-placeholder {
         color: #afafaf;
+        font-size: 1.2em;
         font-weight: bold;
         text-align: center;
     }
