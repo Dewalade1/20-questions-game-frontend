@@ -1,7 +1,16 @@
 
 #inputCard {
-    display: flex;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.5em;
+    width: 24em;
+}
+
+#signupInput {
+    width: 95%;
+}
+
+#signupBtn {
+    margin: 2em 0 0 0;
+    width: 95%;
 }
