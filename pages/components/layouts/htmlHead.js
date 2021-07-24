@@ -32,7 +32,7 @@ const HtmlHead = () => {
                 <link rel="icon" type="image/png" href="https://res.cloudinary.com/hellodewa/image/upload/v1622723336/expeditemovers/images/sys/flavicons/android-chrome-192x192_g6ljuu.png" />
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Otomanopee+One&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet" />
             </Head>
         </>

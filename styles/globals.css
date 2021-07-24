@@ -13,3 +13,22 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.mainContent {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 6em 0 0 0;
+}
+
+@media only screen and (max-width: 849.98px) {
+  .mainContent {
+    display: block;
+  }
+
+  .alignCenter {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

@@ -4,6 +4,7 @@
   background-color: #1368CE;
   color: #ffffff;
   height: 100vh;
+  overflow: hidden;
   width: 100vw;
 }
 
@@ -11,6 +12,7 @@
   background-color: #26890C;
   color: #ffffff;
   height: 100vh;
+  overflow: hidden;
   width: 100vw;
 }
 
@@ -18,6 +20,7 @@
   background-color: #E21B3C;
   color: #ffffff;
   height: 100vh;
+  overflow: hidden;
   width: 100vw;
 }
 
@@ -25,14 +28,17 @@
   background-color: #46178F;
   color: #ffffff;
   height: 100vh;
+  overflow: hidden;
   width: 100vw;
 }
 
 /* BACKGROUND AREA */
 
 #backgroundArea {
+  min-height: 100vh;
+  position: absolute;
   height: 100vh;
-  position: fixed;
+  overflow: hidden;
   width: 100vw;
   z-index: -10;
 }

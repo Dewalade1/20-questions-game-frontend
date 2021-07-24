@@ -6,20 +6,17 @@
     transform: rotate(45deg);
     transform-origin: 20em 5em;
     width: 37em;
-    z-index: -10;
 }
 
 .circle {
-    position: fixed;
-    bottom: -15em;
     border-radius: 50%;
-    height: 42em;
+    height: 45em;
     opacity: 0.6;
-    right: -10em;
-    width: 42em;
-    z-index: 0;
+    transform: rotate(45deg);
+    transform-origin: 150vh 90vw;
+    width: 45em;
+    z-index:-1;
 }
-
 
 /* SHAPE COLORS */
 
@@ -47,6 +44,7 @@
 
     .circle {
         height: 38em;
+        transform-origin: 95vh 90vw;
         width: 38em;
     }
  }
@@ -58,8 +56,9 @@
     }
 
     .circle {
-        height: 36em;
-        width: 36em;
+        height: 34em;
+        transform-origin: 70vh 90vw;
+        width: 34em;
     }
 }
 
@@ -71,9 +70,8 @@
     }
 
     .circle {
-        bottom: -8em;
         height: 26em !important;
-        right: -8em;
+        transform-origin: 0vh 100vw;
         width: 26em !important;
     }
  }
