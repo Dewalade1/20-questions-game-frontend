@@ -1,8 +1,10 @@
 
 #footer {
     align-items: center;
+    bottom: -20em;
     display: flex;
     height: 4em;
+    position: absolute;
     justify-content: center;
     width: 100vw;
 }
@@ -10,3 +12,15 @@
 #copyright {
     text-align: center;
 }
+
+@media only screen and (max-width: 767.98px) {
+    #copyright {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    #copyright {
+        font-size: 12px;
+    }
+ }
