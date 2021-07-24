@@ -14,7 +14,7 @@ const StartPage = ({ gameState , changeState}) => {
     return(
         <div className="mainContent">
             <TransparentButton className="alignCenter"> Tutorials </TransparentButton>
-            <DarkButton  className="alignCenter" onClick={StartGameHandler}> Let's Begin </DarkButton>
+            <DarkButton  className="alignCenter" onClick={StartGameHandler}> Let&apos;s Begin </DarkButton>
         </div>
     )
 }

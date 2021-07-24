@@ -5,7 +5,7 @@ import Navbar from './layouts/navbar'
 import Footer from './layouts/footer'
 import BackgroundShapes from './layouts/backgroundShapes'
 
-import styles from '../../styles/init.module.css'
+import styles from '../styles/init.module.css'
 
 const Init = () => {
 

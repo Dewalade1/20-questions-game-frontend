@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from '../../../styles/layouts/backgroundShapes.module.css'
+import styles from '../../styles/layouts/backgroundShapes.module.css'
 
 const BackgroundShapes = ({ randColor }) => {
 

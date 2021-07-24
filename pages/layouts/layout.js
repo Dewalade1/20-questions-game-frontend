@@ -1,6 +1,6 @@
 import React from 'react'
 
-import HtmlHead from '../components/layouts/htmlHead'
+import HtmlHead from '../../components/layouts/htmlHead'
 
 const Layout = ({children}) => {
     return( 

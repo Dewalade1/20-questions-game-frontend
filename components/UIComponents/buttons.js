@@ -16,7 +16,7 @@ const DarkButton = styled.button`
         background-color: #242424;
         border: 1px solid #242424;
     }
-`;
+`
 
 const TransparentButton = styled.button`
     background-color: inherit;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useImmer } from "use-immer";
 
-import styles from '../../../styles/app/landing.module.css'
+import styles from '../../styles/app/landing.module.css'
 
 import MainGame from './mainGame'
 import StartPage from './StartPage'
@@ -27,7 +27,6 @@ const Landing = () => {
                 : 
                 ''
             }
-            {console.log(state)}
             { state.currentState == 'START' ? 
                 (<StartPage gameState={state} changeState={setState} /> ) :   
             state.currentState == 'PLAYER_SIGNUP' ? 

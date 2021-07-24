@@ -4,7 +4,7 @@ import { DefaultCard } from '../UIComponents/cards'
 import { DarkButton } from '../UIComponents/buttons'
 import { DefaultInput } from '../UIComponents/inputs'
 
-import styles from '../../../styles/app/playerSignup.module.css'
+import styles from '../../styles/app/playerSignup.module.css'
 
 const PlayerSignup = ({gameState , changeState}) => {
 

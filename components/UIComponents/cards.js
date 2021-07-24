@@ -1,4 +1,5 @@
-import styled from 'styled-Components'
+import React from 'react'
+import styled from 'styled-components'
 
 const DefaultCard = styled.div`
     background-color: #ffffff;
