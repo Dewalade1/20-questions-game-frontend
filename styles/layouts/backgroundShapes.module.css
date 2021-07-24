@@ -15,7 +15,6 @@
     transform: rotate(45deg);
     transform-origin: 150vh 90vw;
     width: 45em;
-    z-index:-1;
 }
 
 /* SHAPE COLORS */
