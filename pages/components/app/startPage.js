@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { DarkButton, TransparentButton } from '../UIComponents/buttons'
 
-const StartPage = () => {
+const StartPage = ({ gameState , changeState}) => {
+    
+    const StartGameHandler = () => {
+        console.log(gameState)
+        changeState('PLAYER_SIGNUP')
+        console.log(gameState)
+    }
+
     return(
         <div className="mainContent">
             <TransparentButton className="alignCenter"> Tutorials </TransparentButton>
-            <DarkButton  className="alignCenter"> Let's Begin </DarkButton>
+            <DarkButton  className="alignCenter" onClick={StartGameHandler()}> Let's Begin </DarkButton>
         </div>
     )
 }

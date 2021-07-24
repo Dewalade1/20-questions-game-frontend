@@ -27,7 +27,7 @@ const HtmlHead = () => {
                 <link rel="android-chrome-icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/hellodewa/image/upload/v1622723336/expeditemovers/images/sys/flavicons/android-chrome-192x192_g6ljuu.png"/>
                 <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/hellodewa/image/upload/v1622723336/expeditemovers/images/sys/flavicons/favicon-32x32_bp6pr1.png"/>
                 <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/hellodewa/image/upload/v1622723336/expeditemovers/images/sys/flavicons/favicon-16x16_d6skmh.png"/>
-                <link rel="manifest" href="/site.webmanifest"/>
+                {/* <link rel="manifest" href="/site.webmanifest"/> */}
                 <link rel="shortcut icon" type="image/png" href="https://res.cloudinary.com/hellodewa/image/upload/v1622723336/expeditemovers/images/sys/flavicons/android-chrome-192x192_g6ljuu.png" />
                 <link rel="icon" type="image/png" href="https://res.cloudinary.com/hellodewa/image/upload/v1622723336/expeditemovers/images/sys/flavicons/android-chrome-192x192_g6ljuu.png" />
 

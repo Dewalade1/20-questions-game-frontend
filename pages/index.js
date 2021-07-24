@@ -1,10 +1,13 @@
+import React from 'react'
+import { useImmerReducer } from 'use-immer'
+
 import Head from 'next/head'
 import Image from 'next/image'
 
 import Init from './Components/init'
 import Layout from './layouts/layout'
 
-export default function Home() {
+const Home = () => {
 
   return (
     <Layout >
@@ -12,3 +15,5 @@ export default function Home() {
     </Layout>
   )
 }
+
+export default Home
