@@ -1,30 +1,44 @@
-
 /* BACKGROUNDS */
 
 #blueBackground {
-  background-color: #45a3e5;
+  background-color: #1368CE;
   color: #ffffff;
   height: 100vh;
   width: 100vw;
 }
 
 #greenBackground {
-  background-color: #66bf39;
+  background-color: #26890C;
   color: #ffffff;
   height: 100vh;
   width: 100vw;
 }
 
 #redBackground {
-  background-color: #ff3355;
+  background-color: #E21B3C;
   color: #ffffff;
   height: 100vh;
   width: 100vw;
 }
 
 #purpleBackground {
-  background-color: #864cbf;
+  background-color: #46178F;
   color: #ffffff;
   height: 100vh;
   width: 100vw;
+}
+
+/* BACKGROUND AREA */
+
+#backgroundArea {
+  height: 100vh;
+  width: 100vw;
+  z-index: -10;
+}
+
+/* CONTENT AREA */
+
+#contentArea {
+  position: absolute;
+  top: 0;
 }

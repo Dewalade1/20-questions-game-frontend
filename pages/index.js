@@ -8,9 +8,7 @@ export default function Home() {
 
   return (
     <Layout >
-    <div>
       <Init />
-      </div>
     </Layout>
   )
 }
