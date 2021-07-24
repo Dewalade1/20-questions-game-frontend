@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react'
+import { useImmer } from "use-immer";
 
 import styles from '../../../styles/app/landing.module.css'
 
+import MainGame from './mainGame'
 import StartPage from './StartPage'
 import PlayerSignup from './playerSignup'
 
@@ -9,16 +11,30 @@ import PlayerSignup from './playerSignup'
 
 const Landing = () => {
 
-    const [ gameState , setGameState ] = useState("START")
+    const [state, setState] = useImmer({
+        currentState: "START",
+        playerOne: "",
+        playerTwo: "",
+    })
 
     return( 
         <div id={styles.landing}>
-            <div id={styles.mainLogo}>
-                20 Questions!
-            </div>
-            { gameState == 'START' && (<StartPage gameState={gameState} changeState={setGameState}/> )}
-            { gameState == 'PLAYER_SIGNUP' &&  <PlayerSignup /> } 
-             {/* <StartPage gameState={gameState} changeState={setGameState}/>} */}
+
+            { state.currentState !== 'PLAY_GAME' ? 
+                <div id={styles.mainLogo}>
+                    20 Questions!
+                </div> 
+                : 
+                ''
+            }
+            {console.log(state)}
+            { state.currentState == 'START' ? 
+                (<StartPage gameState={state} changeState={setState} /> ) :   
+            state.currentState == 'PLAYER_SIGNUP' ? 
+                (<PlayerSignup gameState={state} changeState={setState} />) :
+            state.currentState === 'PLAY_GAME' ? 
+                (<MainGame gameState={state} changeState={setState} /> )
+             : ('')} 
         </div>
     )
 }
