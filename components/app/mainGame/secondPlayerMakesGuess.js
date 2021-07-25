@@ -18,11 +18,23 @@ const SecondPlayerMakesGuess = ({ firstPlayer , secondPlayer , mainGameState , s
     }
 
     const DontSendGuess = () => {
+
         setMakeGuess(false)
-        setMainGameState((draft) => {
-            draft.currentStage = "STAGE_2"
-            draft.guessesRemaining = draft.guessesRemaining - 1
-        })
+
+        if (mainGameState.guessesRemaining < 1) {
+
+            setMainGameState((draft) => {
+                draft.currentStage = 'PLAYER_1_WINS'
+            })
+
+        } else {
+
+            setMainGameState((draft) => {
+                draft.currentStage = "STAGE_2"
+                draft.guessesRemaining = draft.guessesRemaining - 1
+            })
+
+        }
     }
 
     const InputGuessHandler = (value) => setGuess(value)
