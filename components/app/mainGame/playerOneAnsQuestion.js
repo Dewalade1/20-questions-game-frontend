@@ -10,21 +10,18 @@ import styles from '../../../styles/app/mainGame/playerOneAnsQuestion.module.css
 
 const PlayerOneAnsQuestion = ({ firstPlayer , secondPlayer , mainGameState , setMainGameState }) => {
 
-    // const latestQuestionIndex = mainGameState.question.length - 1
-    // const latestQuestion = mainGameState.question[latestQuestionIndex].question
-
     const NoBtnClickHandler = () => {
         setMainGameState((draft) => {
-            draft.guessesRemaining = draft.guessesRemaining - 1;
-            draft.currentStage = 'STAGE_2';
-            draft.latestAnswer = 'NO';
+            // draft.guessesRemaining = draft.guessesRemaining - 1;
+            draft.currentStage = 'STAGE_4';
+            draft.latestAnswer = false;
         })
     }
 
     const YesBtnClickHandler = () => {
         setMainGameState((draft) => {
-            draft.currentStage = 'PLAYER_2_WINS';
-            dragt.latestAnswer = 'YES';
+            draft.currentStage = 'STAGE_4';
+            draft.latestAnswer = true;
         })
     }
 

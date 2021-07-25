@@ -22,7 +22,6 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
     return(
         <>
             <div className='mainTitle'>{secondPlayer}&apos;s turn</div>
-            {console.log(mainGameState.latestAnswer)}
             <div>
                 <div id={styles.content}>
                     {

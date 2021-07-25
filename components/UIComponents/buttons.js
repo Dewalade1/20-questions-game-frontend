@@ -8,7 +8,7 @@ const DarkButton = styled.button`
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1em;
-    height: 3.3em;
+    height: 2.7em;
     margin: 2em;
     transition: 0.3s;
     width: 20em;
@@ -25,7 +25,7 @@ const TransparentButton = styled.button`
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1em;
-    height: 3.3em;
+    height: 2.7em;
     margin: 2em;
     transition: 0.3s;
     width: 20em;
@@ -43,7 +43,7 @@ const GreenButton = styled.button`
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1em;
-    height: 3.3em;
+    height: 2.7em;
     margin: 2em;
     transition: 0.3s;
     width: 20em;
@@ -60,7 +60,7 @@ const RedButton = styled.button`
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1em;
-    height: 3.3em;
+    height: 2.7em;
     margin: 2em;
     transition: 0.3s;
     width: 20em;
