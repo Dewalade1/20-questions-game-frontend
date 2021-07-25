@@ -28,6 +28,22 @@ a {
     text-align: center;
 }
 
+.guessDisplay {
+  position: absolute;
+  font-size: 1.2em;
+  font-weight: bold;
+  left: 7vw;
+  top: 10vw;
+}
+
+.green {
+  color: #66BF39;
+}
+
+.red {
+  color: #FF3355;
+}
+
 
 @media only screen and (max-width: 849.98px) {
   .mainContent {
@@ -45,10 +61,18 @@ a {
     .mainTitle {
         font-size: 50px;
     }
+
+    .guessDisplay {
+      top: 5.5em;
+    }
 }
 
 @media only screen and (max-width: 575.98px) {
     .mainTitle {
         font-size: 40px;
+    }
+
+    .guessDisplay {
+      top: 5em;
     }
  }

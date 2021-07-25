@@ -5,7 +5,7 @@ import styles from '../../../styles/app/mainGame/secondPlayerQuestion.module.css
 import { DarkButton } from '../../UIComponents/buttons'
 import { DefaultInput } from '../../UIComponents/inputs'
 
-const SecondPlayerQuestion = ({ secondPlayer , firstPlayer , mainGameState , setMainGameState }) => {
+const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , setMainGameState }) => {
 
     const firstPlayerUpperCase = firstPlayer.toUpperCase()
     const [question, setQuestion] = useState('')

@@ -28,6 +28,7 @@ const HtmlHead = () => {
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Otomanopee+One&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet" />
             </Head>
         </>

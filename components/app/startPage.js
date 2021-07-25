@@ -8,7 +8,6 @@ const StartPage = ({ gameState , changeState}) => {
         changeState((draft) => {
             draft.currentState = 'PLAYER_SIGNUP'
         })
-        console.log(gameState)
     }
 
     return(
