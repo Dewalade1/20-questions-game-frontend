@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import { DefaultCard } from '../UIComponents/cards'
-import { DarkButton } from '../UIComponents/buttons'
-import { DefaultInput } from '../UIComponents/inputs'
+import { DefaultCard } from '../uiComponents/cards'
+import { DarkButton } from '../uiComponents/buttons'
+import { DefaultInput } from '../uiComponents/inputs'
 
 import styles from '../../styles/app/playerSignup.module.css'
 

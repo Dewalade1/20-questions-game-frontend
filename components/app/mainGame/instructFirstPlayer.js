@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from '../../../styles/app/mainGame/instructFirstPlayer.module.css'
 
-import { DarkButton } from '../../UIComponents/buttons'
+import { DarkButton } from '../../uiComponents/buttons'
 
 const InstructFirstPlayer = ({firstPlayer, secondPlayer, mainGameState, setMainGameState }) => {
 

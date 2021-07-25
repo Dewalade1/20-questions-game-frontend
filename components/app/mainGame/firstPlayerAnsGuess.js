@@ -3,7 +3,7 @@ import React from 'react'
 import CheckRoundedIcon from '@material-ui/icons/CheckRounded'
 import ClearRoundedIcon from '@material-ui/icons/ClearRounded'
 
-import { GreenButton , RedButton } from '../../UIComponents/buttons'
+import { GreenButton , RedButton } from '../../uiComponents/buttons'
 
 import styles from '../../../styles/app/mainGame/firstPlayerAnsGuess.module.css'
 

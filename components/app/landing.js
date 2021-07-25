@@ -4,7 +4,7 @@ import { useImmer } from "use-immer";
 import styles from '../../styles/app/landing.module.css'
 
 import MainGame from './mainGame'
-import StartPage from './StartPage'
+import StartPage from './startPage'
 import PlayerSignup from './playerSignup'
 
 
