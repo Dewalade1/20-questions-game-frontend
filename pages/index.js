@@ -4,7 +4,7 @@ import { useImmerReducer } from 'use-immer'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Init from '../Components/init'
+import Init from '../components/init'
 import Layout from './layouts/layout'
 
 const Home = () => {
