@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TransparentButton , DarkButton } from '../../uiComponents/buttons'
+import { TransparentButton , DarkButton } from '../../UIComponents/buttons'
 
 import styles from '../../../styles/app/mainGame/playerTwoWins.module.css'
 

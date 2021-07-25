@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 
 import styles from '../../../styles/app/mainGame/secondPlayerQuestion.module.css'
 
-import { DarkButton } from '../../uiComponents/buttons'
-import { DefaultInput } from '../../uiComponents/inputs'
+import { DarkButton } from '../../UIComponents/buttons'
+import { DefaultInput } from '../../UIComponents/inputs'
 
 const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , setMainGameState }) => {
 

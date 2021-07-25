@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { DefaultInput } from '../../uiComponents/inputs'
-import { DarkButton , RedButton , GreenButton } from '../../uiComponents/buttons'
+import { DefaultInput } from '../../UIComponents/inputs'
+import { DarkButton , RedButton , GreenButton } from '../../UIComponents/buttons'
 
 import styles from '../../../styles/app/mainGame/secondPlayerMakesGuess.module.css'
 

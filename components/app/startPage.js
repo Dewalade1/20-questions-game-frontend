@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import { DarkButton, TransparentButton } from '../uiComponents/buttons'
+import { DarkButton, TransparentButton } from '../UIComponents/buttons'
 
 const StartPage = ({ gameState , changeState}) => {
     
