@@ -20,7 +20,6 @@ const PlayerSignup = ({gameState , changeState}) => {
             setCurrentPlayer('PLAYER 2')
 
         } else if (currentPlayer == 'PLAYER 2') {
-            setPlayerTwo(inputValue)
             setCurrentPlayer('')
             setInputValue('')
 
