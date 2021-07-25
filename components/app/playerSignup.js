@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { DefaultCard } from '../UIComponents/cards'
 import { DarkButton } from '../UIComponents/buttons'
@@ -8,38 +8,35 @@ import styles from '../../styles/app/playerSignup.module.css'
 
 const PlayerSignup = ({gameState , changeState}) => {
 
-    const [playerOne, setPlayerOne] = useState('')
-    const [playerTwo, setPlayerTwo] = useState('')
+    const [inputValue, setInputValue] = useState('')
     const [currentPlayer, setCurrentPlayer] = useState('PLAYER 1')
 
-    const SubmitHandler = () => {
+    const SubmitHandler = (e) => {
         if (currentPlayer == 'PLAYER 1') {
-
+            changeState( (draft) => {
+                draft.playerOne = inputValue;
+        })
+            setInputValue('')
             setCurrentPlayer('PLAYER 2')
 
         } else if (currentPlayer == 'PLAYER 2') {
+            setPlayerTwo(inputValue)
             setCurrentPlayer('')
+            setInputValue('')
 
             changeState( (draft) => {
                 draft.currentState = 'PLAY_GAME';
-                draft.playerOne = playerOne;
-                draft.playerTwo = playerTwo;
+                draft.playerTwo = inputValue;
             })
         }
     }
 
-    const ChangeHandler = (e) => {
-        if (currentPlayer == 'PLAYER 1') {
-            setPlayerOne(e.target.value)
-        } else if (currentPlayer == 'PLAYER 2') {
-            setPlayerTwo(e.target.value)
-        }
-    }
+    const ChangeHandler = (value) => setInputValue(value)
 
     return(
         <div>
             <DefaultCard id={styles.inputCard}>
-                <DefaultInput onChange={ChangeHandler} name="playerInput" id={styles.signupInput} type="text" placeholder={`${currentPlayer} NAME HERE`}/>
+                <DefaultInput onChange={e => ChangeHandler(e.target.value)} value={inputValue} name="playerInput" id={styles.signupInput} type="text" placeholder={`${currentPlayer} NAME HERE`}/>
                 <DarkButton id={styles.signupBtn} onClick={SubmitHandler}> Submit </DarkButton>
             </DefaultCard>
         </div>
