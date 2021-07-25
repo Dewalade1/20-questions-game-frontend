@@ -17,7 +17,7 @@ const Init = () => {
                 <BackgroundShapes randColor={randColor} id={styles.backgroundArea}/>
                 <div id={styles.contentArea}>
                     <Navbar />
-                    <Landing />
+                        <Landing />
                     <Footer/>
                 </div>
            </div>

@@ -19,6 +19,10 @@
     width: 70vw;
 }
 
+#wrongGuess {
+    color: #FF99AA;
+}
+
 @media only screen and (max-width: 575.98px) {
     #sendBtn {
         width: 70vw;

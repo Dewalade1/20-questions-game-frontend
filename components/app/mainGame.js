@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useImmer } from 'use-immer'
 
 import PlayerTwoWins from './mainGame/playerTwoWins'
@@ -11,14 +11,12 @@ const MainGame = ({gameState, changeState}) => {
     const [ mainGameState , setMainGameState ] = useImmer({
         currentStage: "STAGE_1",
         guessesRemaining: 19,
-        questions: [],
         latestQuestion: '',
         latestAnswer: '',
-        answers: []
     })
 
     const players = [ gameState.playerOne, gameState.playerTwo ]
-    const firstPlayer = players[Math.floor(Math.random() * players.length)]
+    const firstPlayer = players[0]
     const secondPlayer = players.filter(player => player != firstPlayer)
 
     return(
@@ -28,7 +26,7 @@ const MainGame = ({gameState, changeState}) => {
                     mainGameState.currentStage != "STAGE_1" && mainGameState.currentStage != "PLAYER_2_WINS" && mainGameState.currentStage != "PLAYER_1_WINS"
                 ) ? (
                 <div className="guessDisplay"> Guesses Left: {'  '}
-                    <span className={mainGameState.guessesRemaining >= 15 ? 'green' : mainGameState.guessesRemaining <= 5 ? 'red' : ''}>
+                    <span className={mainGameState.guessesRemaining >= 14 ? 'green' : mainGameState.guessesRemaining <= 5 ? 'red' : ''}>
                         {mainGameState.guessesRemaining}
                     </span> 
                 </div>

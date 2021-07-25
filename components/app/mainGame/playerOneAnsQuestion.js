@@ -13,15 +13,18 @@ const PlayerOneAnsQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
     // const latestQuestionIndex = mainGameState.question.length - 1
     // const latestQuestion = mainGameState.question[latestQuestionIndex].question
 
-    const NoClickHandler = () => {
+    const NoBtnClickHandler = () => {
         setMainGameState((draft) => {
             draft.guessesRemaining = draft.guessesRemaining - 1;
+            draft.currentStage = 'STAGE_2';
+            draft.latestAnswer = 'NO';
         })
     }
 
     const YesBtnClickHandler = () => {
         setMainGameState((draft) => {
-            draft.currentStage = 'PLAYER_2_WINS'
+            draft.currentStage = 'PLAYER_2_WINS';
+            dragt.latestAnswer = 'YES';
         })
     }
 
@@ -31,7 +34,7 @@ const PlayerOneAnsQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
             <div> 
                 <p id={styles.question}>{mainGameState.latestQuestion}?</p> 
                 <div id={styles.buttonArea}>
-                    <RedButton> 
+                    <RedButton onClick={NoBtnClickHandler}> 
                         <ClearRoundedIcon className={styles.buttonIcon} /> {' '} 
                         No 
                     </RedButton>
