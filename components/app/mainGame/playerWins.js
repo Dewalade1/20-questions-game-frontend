@@ -5,7 +5,7 @@ import { TransparentButton , DarkButton } from '../../UIComponents/buttons'
 import styles from '../../../styles/app/mainGame/playerTwoWins.module.css'
 
 
-const PlayerTwoWins = ({secondPlayer, mainGameState , setMainGameState , gameState , changeState }) => {
+const PlayerWins = ({firstPlayer , secondPlayer, mainGameState , setMainGameState , gameState , changeState }) => {
 
     const TransparentBtnClickHandler = () => {
         changeState((draft) => {
@@ -23,12 +23,21 @@ const PlayerTwoWins = ({secondPlayer, mainGameState , setMainGameState , gameSta
 
     return(
         <div id={styles.contentArea}>
-            <div className="mainTitle" id={styles.title}> {secondPlayer} Wins</div>
+            <div className="mainTitle" id={styles.title}> 
+                {
+                    mainGameState.currentStage == 'PLAYER_2_WINS' ? secondPlayer : 
+                    mainGameState.currentStage == 'PLAYER_1_WINS' ? firstPlayer : 
+                    ''
+                } Wins
+            </div>
             <div>
                 <p id={styles.congratSpeech}>
                     Congrats on your victory!!
                     <br />
-                    Guesses Used: {20 - mainGameState.guessesRemaining}
+                    {
+                        mainGameState.currentStage == 'PLAYER_2_WINS' ? 'Guesses Used:': 
+                        mainGameState.currentStage == 'PLAYER_1_WINS' ? `${secondPlayer} attempts:` :
+                        ''} {20 - mainGameState.guessesRemaining}
                 </p>
                 <p id={styles.newRoundRequest}> Play another round? </p>
                 <div>
@@ -40,4 +49,4 @@ const PlayerTwoWins = ({secondPlayer, mainGameState , setMainGameState , gameSta
     )
 }
 
-export default PlayerTwoWins
+export default PlayerWins

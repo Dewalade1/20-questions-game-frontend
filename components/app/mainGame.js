@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useImmer } from 'use-immer'
 
-import PlayerTwoWins from './mainGame/playerTwoWins'
+import PlayerWins from './mainGame/playerWins'
 import FirstPlayerAnsGuess from './mainGame/firstPlayerAnsGuess'
 import InstructFirstPlayer from './mainGame/instructFirstPlayer'
 import SecondPlayerQuestion from './mainGame/secondPlayerQuestion'
@@ -52,8 +52,8 @@ const MainGame = ({gameState, changeState}) => {
                 mainGameState.currentStage == "STAGE_5" ? (
                     <FirstPlayerAnsGuess  firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} />
             ) :
-                mainGameState.currentStage == "PLAYER_2_WINS" ? (
-                    <PlayerTwoWins secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} gameState={gameState} changeState={changeState} />
+                (mainGameState.currentStage == "PLAYER_2_WINS" || mainGameState.currentStage == "PLAYER_1_WINS") ? (
+                    <PlayerWins firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} gameState={gameState} changeState={changeState} />
             ) : (
                 ''
                 )
