@@ -10,18 +10,18 @@ import styles from '../../../styles/app/mainGame/playerOneAnsQuestion.module.css
 
 const PlayerOneAnsQuestion = ({ firstPlayer , secondPlayer , mainGameState , setMainGameState }) => {
 
-    // const latestQuestionIndex = mainGameState.question.length - 1
-    // const latestQuestion = mainGameState.question[latestQuestionIndex].question
-
-    const NoClickHandler = () => {
+    const NoBtnClickHandler = () => {
         setMainGameState((draft) => {
-            draft.guessesRemaining = draft.guessesRemaining - 1;
+            // draft.guessesRemaining = draft.guessesRemaining - 1;
+            draft.currentStage = 'STAGE_4';
+            draft.latestAnswer = false;
         })
     }
 
     const YesBtnClickHandler = () => {
         setMainGameState((draft) => {
-            draft.currentStage = 'PLAYER_2_WINS'
+            draft.currentStage = 'STAGE_4';
+            draft.latestAnswer = true;
         })
     }
 
@@ -31,7 +31,7 @@ const PlayerOneAnsQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
             <div> 
                 <p id={styles.question}>{mainGameState.latestQuestion}?</p> 
                 <div id={styles.buttonArea}>
-                    <RedButton> 
+                    <RedButton onClick={NoBtnClickHandler}> 
                         <ClearRoundedIcon className={styles.buttonIcon} /> {' '} 
                         No 
                     </RedButton>

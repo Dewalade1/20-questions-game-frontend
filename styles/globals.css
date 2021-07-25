@@ -37,11 +37,16 @@ a {
 }
 
 .green {
-  color: #66BF39;
+  color: #D2DF9C;
 }
 
 .red {
-  color: #FF3355;
+  color: #FF99AA;
+}
+
+.hint {
+    color: #FFC00A;
+    padding-top: 1.2em;
 }
 
 

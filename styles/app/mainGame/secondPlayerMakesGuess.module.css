@@ -1,0 +1,34 @@
+
+.button {
+    margin-top: .5em !important;
+}
+
+#contentArea {
+    text-align: center;
+}
+
+.textArea {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: .3em;
+}
+
+#title {
+    padding-top: 90px;
+}
+
+#formArea {
+    padding-top: 1.6em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 24em;
+}
+
+#guessInput {
+    width: 95%;
+}
+
+#guessBtn {
+    margin: 1em 0 0 0;
+    width: 95%;
+}

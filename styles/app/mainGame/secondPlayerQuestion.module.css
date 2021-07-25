@@ -1,6 +1,6 @@
 #content {
     font-size: 1.3em;
-    font-weight: Bold;
+    font-weight: bold;
     padding-top: 1.2 em;
     text-align: center;
 }
@@ -17,6 +17,10 @@
     margin-right: auto;
     margin-top: 3em;
     width: 70vw;
+}
+
+#wrongGuess {
+    color: #FF99AA;
 }
 
 @media only screen and (max-width: 575.98px) {

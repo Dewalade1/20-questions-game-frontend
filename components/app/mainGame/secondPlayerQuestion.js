@@ -13,7 +13,6 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
     const SendHandler = () => {
         setMainGameState((draft) => {
             draft.currentStage = 'STAGE_3';
-            draft.questions.push({question: question, answer: ''});
             draft.latestQuestion = question;
         })
     }
@@ -24,7 +23,18 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
         <>
             <div className='mainTitle'>{secondPlayer}&apos;s turn</div>
             <div>
-                <p id={styles.content}> Ask {firstPlayer} a question to figure out the word</p>
+                <div id={styles.content}>
+                    {
+                        (mainGameState.latestAnswer == 'NO') ? (
+                            <>
+                                <p id={styles.wrongGuess}> Wrong Guess </p>
+                                <p> Ask {firstPlayer} for another hint </p>
+                            </>
+                    ) : (
+                        <p> Ask {firstPlayer} a question to figure out the word</p>
+                    )}
+                </div>
+
                 <DefaultInput 
                 id={styles.questionInput} 
                 value={question} 
