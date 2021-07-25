@@ -13,6 +13,18 @@ const PlayerOneAnsQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
     // const latestQuestionIndex = mainGameState.question.length - 1
     // const latestQuestion = mainGameState.question[latestQuestionIndex].question
 
+    const NoClickHandler = () => {
+        setMainGameState((draft) => {
+            draft.guessesRemaining = draft.guessesRemaining - 1;
+        })
+    }
+
+    const YesBtnClickHandler = () => {
+        setMainGameState((draft) => {
+            draft.currentStage = 'PLAYER_2_WINS'
+        })
+    }
+
     return(
         <>
             <div className='mainTitle'> {firstPlayer}&apos;s Turn </div>
@@ -23,7 +35,7 @@ const PlayerOneAnsQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
                         <ClearRoundedIcon className={styles.buttonIcon} /> {' '} 
                         No 
                     </RedButton>
-                    <GreenButton> 
+                    <GreenButton onClick={YesBtnClickHandler}> 
                         <CheckRoundedIcon className={styles.buttonIcon} /> {' '} 
                         Yes
                     </GreenButton>

@@ -25,7 +25,14 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
             <div className='mainTitle'>{secondPlayer}&apos;s turn</div>
             <div>
                 <p id={styles.content}> Ask {firstPlayer} a question to figure out the word</p>
-                <DefaultInput id={styles.questionInput} value={question} onChange={(e) => InputChangeHandler(e.target.value)} type="text" name="secondPlayerQuestion" placeholder={`TYPE A QUESTION FOR ${firstPlayerUpperCase}`}/>
+                <DefaultInput 
+                id={styles.questionInput} 
+                value={question} 
+                onChange={(e) => InputChangeHandler(e.target.value)} 
+                type="text" 
+                name="secondPlayerQuestion" 
+                placeholder={`ENTER A QUESTION FOR ${firstPlayerUpperCase}`}
+                />
                 <DarkButton onClick={SendHandler} id={styles.sendBtn}> Send </DarkButton>
             </div>
         </>
