@@ -8,10 +8,12 @@ import styles from '../../../styles/app/mainGame/secondPlayerMakesGuess.module.c
 const SecondPlayerMakesGuess = ({ firstPlayer , secondPlayer , mainGameState , setMainGameState }) => {
 
     const [makeGuess, setMakeGuess ] = useState()
+    const [guess, setGuess ] = useState('')
 
     const SendGuess = () => {
         setMainGameState((draft) => {
             draft.currentStage = "STAGE_5"
+            draft.guess = guess
         })
     }
 
@@ -22,6 +24,8 @@ const SecondPlayerMakesGuess = ({ firstPlayer , secondPlayer , mainGameState , s
             draft.guessesRemaining = draft.guessesRemaining - 1
         })
     }
+
+    const InputGuessHandler = (value) => setGuess(value)
 
     return(
         <>
@@ -39,14 +43,26 @@ const SecondPlayerMakesGuess = ({ firstPlayer , secondPlayer , mainGameState , s
             <p className={styles.textArea}> Make a guess? </p>
             { makeGuess ? (
                 <div  id={styles.formArea}>
-                    <DefaultInput id={styles.guessInput} placeholder='YOUR GUESS'/>
-                    <DarkButton id={styles.guessBtn} onClick={SendGuess}> Show {firstPlayer} </DarkButton>
+                    <DefaultInput 
+                        id={styles.guessInput} 
+                        onChange={(e) => InputGuessHandler(e.target.value)} 
+                        value={guess} 
+                        placeholder='YOUR GUESS'
+                    />
+                    <DarkButton 
+                        id={styles.guessBtn} 
+                        onClick={SendGuess}
+                    > 
+                        Show {firstPlayer} 
+                    </DarkButton>
                 </div>
               ) : (
                 <div>
-                    <p className={`${styles.textArea} hint`}> Note: You will lose a guess whether you choose to make a guess or not </p>
-                    <RedButton className={styles.button} onClick={DontSendGuess}> No </RedButton>
-                    <GreenButton className={styles.button} onClick={() => setMakeGuess(true)}> Yes </GreenButton>
+                    <p className={`${styles.textArea} hint`}> 
+                        Note: You will lose a guess whether you choose to make a guess or not 
+                    </p>
+                    <RedButton className={styles.button} onClick={DontSendGuess}> Skip Guess </RedButton>
+                    <GreenButton className={styles.button} onClick={() => setMakeGuess(true)}> Make Guess </GreenButton>
                 </div>
               )
             }           

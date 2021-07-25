@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import { useImmer } from 'use-immer'
 
 import PlayerTwoWins from './mainGame/playerTwoWins'
+import FirstPlayerAnsGuess from './mainGame/firstPlayerAnsGuess'
 import InstructFirstPlayer from './mainGame/instructFirstPlayer'
 import SecondPlayerQuestion from './mainGame/secondPlayerQuestion'
 import PlayerOneAnsQuestion from './mainGame/playerOneAnsQuestion'
 import SecondPlayerMakesGuess from './mainGame/secondPlayerMakesGuess'
+
 
 const MainGame = ({gameState, changeState}) => {
 
@@ -14,6 +16,7 @@ const MainGame = ({gameState, changeState}) => {
         guessesRemaining: 19,
         latestQuestion: '',
         latestAnswer: null,
+        guess: ''
     })
 
     const players = [ gameState.playerOne, gameState.playerTwo ]
@@ -40,12 +43,15 @@ const MainGame = ({gameState, changeState}) => {
                 mainGameState.currentStage == "STAGE_2" ? (
                     <SecondPlayerQuestion firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} />
             ) :
-                mainGameState.currentStage == "STAGE_3" || mainGameState.currentStage == "STAGE_5" ? (
+                mainGameState.currentStage == "STAGE_3" ? (
                     <PlayerOneAnsQuestion firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} />
             ): 
                 mainGameState.currentStage == "STAGE_4" ? (
                     <SecondPlayerMakesGuess firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} />
             ):
+                mainGameState.currentStage == "STAGE_5" ? (
+                    <FirstPlayerAnsGuess  firstPlayer={firstPlayer} secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} />
+            ) :
                 mainGameState.currentStage == "PLAYER_2_WINS" ? (
                     <PlayerTwoWins secondPlayer={secondPlayer} mainGameState={mainGameState} setMainGameState={setMainGameState} gameState={gameState} changeState={changeState} />
             ) : (
