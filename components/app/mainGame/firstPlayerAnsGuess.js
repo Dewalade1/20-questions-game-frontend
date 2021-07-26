@@ -45,11 +45,11 @@ const FirstPlayerAnsGuess = ({ firstPlayer , secondPlayer , mainGameState , setM
                     <p className={styles.text}>Is this guess correct?</p>
                 </div> 
                 <div id={styles.buttonArea}>
-                    <RedButton onClick={NoBtnClickHandler}> 
+                    <RedButton className={styles.button} onClick={NoBtnClickHandler}> 
                         <ClearRoundedIcon className={styles.buttonIcon} /> {' '} 
                         No 
                     </RedButton>
-                    <GreenButton onClick={YesBtnClickHandler}> 
+                    <GreenButton className={styles.button} onClick={YesBtnClickHandler}> 
                         <CheckRoundedIcon className={styles.buttonIcon} /> {' '} 
                         Yes
                     </GreenButton>
