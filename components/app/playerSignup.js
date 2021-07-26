@@ -54,6 +54,14 @@ const PlayerSignup = ({gameState , changeState}) => {
                     draft.playerOne.foundError = true;
                     draft.playerOne.errorMessage = "Player 1 name must be at least 3 characters long";
                 }
+                if (draft.playerOne.value.trim() == '') {
+                    draft.playerOne.foundError = true
+                    draft.playerOne.errorMessage = "Player 1 name cannot be empty"
+                }
+                if( draft.playerOne.value.split(' ').length > 1 ){
+                    draft.playerOne.foundError = true
+                    draft.playerOne.errorMessage = "Player 1 name must not contain spaces"
+                }
                 break;
 
             case 'player2ValidateImmediately':
@@ -79,6 +87,14 @@ const PlayerSignup = ({gameState , changeState}) => {
                 if (draft.playerTwo.value.length < 3) {
                     draft.playerTwo.foundError = true;
                     draft.playerTwo.errorMessage = "Player 2 name must be at least 3 characters long";
+                }
+                if (draft.playerTwo.value.trim() == '') {
+                    draft.playerTwo.foundError = true
+                    draft.playerTwo.errorMessage = "Player 2 name cannot be empty"
+                }
+                if( draft.playerTwo.value.split(' ').length > 1 ){
+                    draft.playerTwo.foundError = true
+                    draft.playerTwo.errorMessage = "Player 2 name must not contain spaces"
                 }
                 break;
             
@@ -116,9 +132,9 @@ const PlayerSignup = ({gameState , changeState}) => {
             dispatch({type: 'player1ValidateImmediately', value: state.playerOne.value})
             dispatch({type: 'player1ValidateAfterDelay', value: state.playerOne.value})
 
-            if (!state.playerOne.foundError) {
+            if (!state.playerOne.foundError && state.playerOne.value.trim() != '') {
                 changeState( (draft) => {
-                    draft.playerOne = inputValue;
+                    draft.playerOne = inputValue.trim();
                 })
                 setInputValue('')
                 setCurrentPlayer('PLAYER 2')
@@ -129,11 +145,11 @@ const PlayerSignup = ({gameState , changeState}) => {
             dispatch({type: 'player2ValidateAfterDelay', value: state.playerTwo.value})
             dispatch({type: 'playerNamesAreUnique', value: state.playerTwo.value})
 
-            if (!state.playerTwo.foundError) {
+            if (!state.playerTwo.foundError && state.playerTwo.value.trim() != '') {
 
                 changeState( (draft) => {
                     draft.currentState = 'PLAY_GAME';
-                    draft.playerTwo = inputValue;
+                    draft.playerTwo = inputValue.trim();
                 })
 
                 setCurrentPlayer('')

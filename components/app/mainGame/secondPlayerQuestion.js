@@ -35,6 +35,10 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
                     draft.foundError = true;
                     draft.errorMessage = "Question must be at least 5 characters long";
                 }
+                if (draft.value == '') {
+                    draft.foundError = true
+                    draft.errorMessage = "Question cannot be empty"
+                }
                 break;
 
             default:
@@ -57,10 +61,10 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
         dispatch({type: 'questionValidateImmediately', value: validatedInput.value})
         dispatch({type: 'questionValidateAfterDelay', value: validatedInput.value})
 
-        if (!validatedInput.foundError) {
+        if (!validatedInput.foundError && validatedInput.value.trim() != '') {
             setMainGameState((draft) => {
                 draft.currentStage = 'STAGE_3';
-                draft.latestQuestion = question;
+                draft.latestQuestion = question.trim();
             })
         }
     }
@@ -87,12 +91,12 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
                 </div>
 
                 <DefaultInput 
-                id={styles.questionInput} 
-                value={question} 
-                onChange={(e) => InputChangeHandler(e.target.value)} 
-                type="text" 
-                name="secondPlayerQuestion" 
-                placeholder={`ENTER A QUESTION FOR ${firstPlayerUpperCase}`}
+                    id={styles.questionInput} 
+                    value={question} 
+                    onChange={(e) => InputChangeHandler(e.target.value)} 
+                    type="text" 
+                    name="secondPlayerQuestion" 
+                    placeholder={`ENTER A QUESTION FOR ${firstPlayerUpperCase}`}
                 />
                 <p id={styles.errorMessage}> {validatedInput.errorMessage} </p>
                 <DarkButton onClick={SendHandler} id={styles.sendBtn}> Send </DarkButton>
