@@ -66,4 +66,8 @@
     .button {
         width: 70vw !important;
     }
- }
+
+    #formArea {
+        width: 80vw;
+    }
+}
