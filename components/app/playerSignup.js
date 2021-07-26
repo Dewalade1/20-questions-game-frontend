@@ -1,3 +1,4 @@
+import Axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useImmerReducer } from 'use-immer'
 
@@ -24,7 +25,8 @@ const PlayerSignup = ({gameState , changeState}) => {
             foundError: false,
             errorMessage: '',
             isUnique: false
-        }
+        },
+        submitCount: 0,
     }
 
     function reducer ( draft , action ) {
@@ -104,6 +106,14 @@ const PlayerSignup = ({gameState , changeState}) => {
                     draft.playerTwo.foundError = true
                     draft.playerTwo.errorMessage = "Player 2 and player 1 must have unique names"
                 }
+                break;
+
+            case 'submitPlayerName':
+                if (!draft.playerOne.foundError || !draft.playerTwo.foundError) {
+                    draft.submitCount++
+                }
+            break;
+
             default:
                 return draft;
         }
@@ -126,18 +136,36 @@ const PlayerSignup = ({gameState , changeState}) => {
         }
     } , [state.playerTwo.value])
 
-    const SubmitHandler = (e) => {
+    useEffect(() => {
+
+    } , [state.submitCount])
+
+    async function SubmitHandler (e) {
         e.preventDefault()
         if (currentPlayer == 'PLAYER 1') {
             dispatch({type: 'player1ValidateImmediately', value: state.playerOne.value})
             dispatch({type: 'player1ValidateAfterDelay', value: state.playerOne.value})
 
             if (!state.playerOne.foundError && state.playerOne.value.trim() != '') {
-                changeState( (draft) => {
-                    draft.playerOne = inputValue.trim();
-                })
-                setInputValue('')
-                setCurrentPlayer('PLAYER 2')
+
+                try {
+                    const response = await Axios.post('/signup', { playerName: state.playerOne.value})
+
+                    if (response) {
+                        console.log(response)
+                    
+                        dispatch({type: 'submitPlayerName'})
+
+                        changeState( (draft) => {
+                            draft.playerOne = inputValue.trim();
+                        })
+
+                        setInputValue('')
+                        setCurrentPlayer('PLAYER 2')
+                    }
+                } catch (e) {
+                    console.log(e)
+                }
             }
 
         } else if (currentPlayer == 'PLAYER 2') {
@@ -147,13 +175,22 @@ const PlayerSignup = ({gameState , changeState}) => {
 
             if (!state.playerTwo.foundError && state.playerTwo.value.trim() != '') {
 
-                changeState( (draft) => {
-                    draft.currentState = 'PLAY_GAME';
-                    draft.playerTwo = inputValue.trim();
-                })
+                try {
+                    const response = await Axios.post('/signup', { playerName: state.playerTwo.value})
 
-                setCurrentPlayer('')
-                setInputValue('')
+                    if (response) {
+                        console.log(response)
+                        changeState( (draft) => {
+                            draft.currentState = 'PLAY_GAME';
+                            draft.playerTwo = inputValue.trim();
+                        })
+
+                        setCurrentPlayer('')
+                        setInputValue('')
+                    }
+                } catch (e) {
+                    console.log(e)
+                }
             }
         }
     }
