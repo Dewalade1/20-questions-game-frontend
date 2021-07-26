@@ -116,7 +116,7 @@ const SecondPlayerMakesGuess = ({ firstPlayer , secondPlayer , mainGameState , s
                         value={guess} 
                         placeholder='YOUR GUESS'
                     />
-                    <p> {validatedGuess.foundError ? validatedGuess.errorMessage : ''} </p>
+                    <p id={styles.errorMessage}> {validatedGuess.foundError ? validatedGuess.errorMessage : ''} </p>
                     <DarkButton 
                         id={styles.guessBtn} 
                         onClick={SendGuess}

@@ -31,6 +31,16 @@ const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , set
                 break;
 
             case 'questionValidateAfterDelay':
+
+                const inputWordList = draft.value.split(' ')
+                const questionWords = ['is', 'it', 'do', 'does', 'which', 'when', 'where', 'did', 'what', 'why', 'which', 'who', 'how', 'whose', 'whom']
+
+                for (let word in inputWordList) {
+                    if ( (questionWords.includes(word.toLowerCase()))) {
+                        draft.foundError = true
+                        draft.errorMessage = "You did not enter a valid question"
+                    }
+                }
                 if (draft.value.length < 5) {
                     draft.foundError = true;
                     draft.errorMessage = "Question must be at least 5 characters long";
