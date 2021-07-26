@@ -42,3 +42,28 @@
     margin: .5em 0 0 0;
     width: 95%;
 }
+
+@media only screen and (max-width: 767.98px) {
+    #contentArea {
+        margin-left: auto;
+        margin-right: auto;
+        width: 65vw;
+    }
+
+    .button {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 70vw !important;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    #contentArea {
+        height: 47vh;
+        width: 75vw;
+    }
+
+    .button {
+        width: 70vw !important;
+    }
+ }

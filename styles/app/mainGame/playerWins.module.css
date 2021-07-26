@@ -1,0 +1,60 @@
+
+#button {
+    margin-top: 1.5em;
+}
+
+#congratSpeech {
+    font-size: 1.5em;
+}
+
+#contentArea {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#newRoundRequest {
+    padding-top: 18px;
+}
+
+#title {
+    padding-top: 60px;
+}
+
+@media only screen and (max-width: 767.98px) {
+    #button {
+        margin-top: .0em;
+    }
+
+    #congratSpeech {
+        font-size: 1.5em;
+    }
+
+    #contentArea {
+        font-size: 1.1em;
+    }
+
+    #newRoundRequest {
+        padding-top: 10px;
+        padding-bottom: 35px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    #button {
+        width: 70vw;
+}
+
+    #congratSpeech {
+        font-size: 1.6em;
+    }
+
+    #contentArea {
+        font-size: 1em;
+    }
+
+    #newRoundRequest {
+        font-size: 1.3em;
+        padding-top: 13px;
+    }
+ }

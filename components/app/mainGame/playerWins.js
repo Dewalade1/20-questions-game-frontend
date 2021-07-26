@@ -2,7 +2,7 @@ import React from 'react'
 
 import { TransparentButton , DarkButton } from '../../UIComponents/buttons'
 
-import styles from '../../../styles/app/mainGame/playerTwoWins.module.css'
+import styles from '../../../styles/app/mainGame/playerWins.module.css'
 
 
 const PlayerWins = ({firstPlayer , secondPlayer, mainGameState , setMainGameState , gameState , changeState }) => {

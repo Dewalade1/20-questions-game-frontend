@@ -14,10 +14,22 @@
 }
 
 #signupInput {
-    width: 95%;
+    width: 99%;
 }
 
 #signupBtn {
     margin: 1em 0 0 0;
-    width: 95%;
+    width: 99%;
 }
+
+@media only screen and (max-width: 767.98px) {
+    #inputCard {
+        width: 75wv;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    #inputCard {
+        width: 80vw;
+    }
+ }

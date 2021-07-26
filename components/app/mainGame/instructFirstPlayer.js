@@ -19,7 +19,7 @@ const InstructFirstPlayer = ({firstPlayer, secondPlayer, mainGameState, setMainG
             <p className={styles.text}> You are the first player</p>
             <p className={styles.text}> Think of a word and when you are ready click the <span id={styles.ready}>&apos;Ready&apos;</span> button</p>
             <p className={`${styles.text} hint`}>Warning: Make sure {secondPlayer} doesn&apos;t find out about it or you&apos;ll lose.</p>
-            <DarkButton onClick={ClickHandler}> Ready </DarkButton>
+            <DarkButton id={styles.readyBtn} onClick={ClickHandler}> Ready </DarkButton>
             </div>
         </>
     )

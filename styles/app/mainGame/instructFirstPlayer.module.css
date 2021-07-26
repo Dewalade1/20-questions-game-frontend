@@ -17,3 +17,27 @@
 #ready {
     color: #66BF39
 }
+
+@media only screen and (max-width: 767.98px) {
+    #mainContent {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70vw;
+    }
+
+    #readyBtn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    #mainContent {
+        height: 47vh;
+        width: 80vw;
+    }
+
+    #readyBtn {
+        width: 70vw;
+    }
+ }
