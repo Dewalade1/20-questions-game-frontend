@@ -53,3 +53,37 @@ npm start
 ```
 npm run dev
 ```
+
+## Available Scripts
+
+Most available scripts are NextJS built-in scripts but the most useful ones are:
+
+* **Start app**
+```
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
+The page will refresh if you make edits to the code.
+You will also see any compile and lint errors in the console.
+
+
+* **Start app using a dev environment**
+```
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
+The page will refresh if you make edits to the code.
+You will also see any compile and lint errors in the console.
+
+* **Check app for lint errors**
+```
+npm run lint
+```
+
+* **Build the app locally**
+```
+npm run build
+```
+
+
+
