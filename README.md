@@ -1,5 +1,12 @@
 # 20-questions-game-frontend
 
+## Tools used
+
+* [ReactJS](https://reactjs.org) - to build the app
+* [NextJS](https://nextjs.org) - for preview and production deployment
+* [Vercel](https://vercel.com) - for hosting the app
+* [Git and GitHub](https://git-scm.com) - for tracking, storage and version control
+
 ## How to setup the app
 
 ### Option 1
