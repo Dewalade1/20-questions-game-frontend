@@ -42,3 +42,9 @@
     margin: .5em 0 0 0;
     width: 95%;
 }
+
+@media only screen and (max-width: 575.98px) {
+    #formArea {
+        width: 80vw;
+    }
+ }
