@@ -1,118 +1,147 @@
-import React, {useState , useEffect} from 'react';
-import { useImmerReducer } from 'use-immer'
+import React, { useState, useEffect } from "react";
+import { useImmerReducer } from "use-immer";
 
-import styles from '../../../styles/app/mainGame/secondPlayerQuestion.module.css'
+import styles from "../../../styles/app/mainGame/secondPlayerQuestion.module.css";
 
-import { DarkButton } from '../../UIComponents/buttons'
-import { DefaultInput } from '../../UIComponents/inputs'
+import { DarkButton } from "../../UIComponents/buttons";
+import { DefaultInput } from "../../UIComponents/inputs";
 
-const SecondPlayerQuestion = ({ firstPlayer , secondPlayer , mainGameState , setMainGameState }) => {
+const SecondPlayerQuestion = ({
+  firstPlayer,
+  secondPlayer,
+  mainGameState,
+  setMainGameState,
+}) => {
+  const firstPlayerUpperCase = firstPlayer.toUpperCase();
+  const [question, setQuestion] = useState("");
 
-    const firstPlayerUpperCase = firstPlayer.toUpperCase()
-    const [question, setQuestion] = useState('')
+  const validateInput = {
+    value: "",
+    foundError: false,
+    errorMessage: "",
+  };
 
-    const validateInput = {
-        value: '',
-        foundError: false,
-        errorMessage: '',
-    }
+  function reducer(draft, action) {
+    switch (action.type) {
+      case "questionValidateImmediately":
+        draft.value = action.value;
+        draft.foundError = false;
+        draft.errorMessage = "";
 
-    function reducer ( draft , action ) {
-        switch (action.type) {
-            case 'questionValidateImmediately':
-                draft.value = action.value
-                draft.foundError = false
-                draft.errorMessage = ''
-
-                if (parseInt(draft.value) || parseFloat(draft.value)) {
-                    draft.foundError = true
-                    draft.errorMessage = "Question cannot be just a number"
-                }
-                break;
-
-            case 'questionValidateAfterDelay':
-
-                const inputWordList = draft.value.split(' ')
-                const questionWords = ['is', 'it', 'do', 'does', 'which', 'when', 'where', 'did', 'what', 'why', 'which', 'who', 'how', 'whose', 'whom']
-
-                for (let word in inputWordList) {
-                    if ( (questionWords.includes(word.toLowerCase()))) {
-                        draft.foundError = true
-                        draft.errorMessage = "You did not enter a valid question"
-                    }
-                }
-                if (draft.value.length < 5) {
-                    draft.foundError = true;
-                    draft.errorMessage = "Question must be at least 5 characters long";
-                }
-                if (draft.value == '') {
-                    draft.foundError = true
-                    draft.errorMessage = "Question cannot be empty"
-                }
-                break;
-
-            default:
-                return draft;
-            }
+        if (parseInt(draft.value) || parseFloat(draft.value)) {
+          draft.foundError = true;
+          draft.errorMessage = "Question cannot be just a number";
         }
+        break;
 
-    const [ validatedInput , dispatch ] = useImmerReducer(reducer, validateInput)
+      case "questionValidateAfterDelay":
+        const inputWordList = draft.value.split(" ");
+        const questionWords = [
+          "is",
+          "it",
+          "do",
+          "does",
+          "which",
+          "when",
+          "where",
+          "did",
+          "what",
+          "why",
+          "which",
+          "who",
+          "how",
+          "whose",
+          "whom",
+        ];
 
-    useEffect(() => {
-        if (validatedInput.value) {
-            const delay = setTimeout(() => dispatch({type: 'questionValidateAfterDelay'}), 750);
-            return () => clearTimeout(delay)
+        for (let word in inputWordList) {
+          if (questionWords.includes(word.toLowerCase())) {
+            draft.foundError = true;
+            draft.errorMessage = "You did not enter a valid question";
+          }
         }
-    } , [validatedInput.value])
-
-
-    const SendHandler = (e) => {
-        e.preventDefault()
-        dispatch({type: 'questionValidateImmediately', value: validatedInput.value})
-        dispatch({type: 'questionValidateAfterDelay', value: validatedInput.value})
-
-        if (!validatedInput.foundError && validatedInput.value.trim() != '') {
-            setMainGameState((draft) => {
-                draft.currentStage = 'STAGE_3';
-                draft.latestQuestion = question.trim();
-            })
+        if (draft.value.length < 5) {
+          draft.foundError = true;
+          draft.errorMessage = "Question must be at least 5 characters long";
         }
+        if (draft.value == "") {
+          draft.foundError = true;
+          draft.errorMessage = "Question cannot be empty";
+        }
+        break;
+
+      default:
+        return draft;
     }
+  }
 
-    const InputChangeHandler = (value) => {
-        dispatch({type: 'questionValidateImmediately', value: value})
-        setQuestion(value)
+  const [validatedInput, dispatch] = useImmerReducer(reducer, validateInput);
+
+  useEffect(() => {
+    if (validatedInput.value) {
+      const delay = setTimeout(
+        () => dispatch({ type: "questionValidateAfterDelay" }),
+        750
+      );
+      return () => clearTimeout(delay);
     }
+  }, [validatedInput.value]);
 
-    return(
-        <>
-            <div className='mainTitle'>{secondPlayer}&apos;s turn</div>
-            <div>
-                <div id={styles.content}>
-                    {
-                        (mainGameState.latestAnswer == 'NO') ? (
-                            <>
-                                <p id={styles.wrongGuess}> Wrong Guess </p>
-                                <p> Ask {firstPlayer} for another hint </p>
-                            </>
-                    ) : (
-                        <p> Ask {firstPlayer} a question to figure out the word</p>
-                    )}
-                </div>
+  const SendHandler = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "questionValidateImmediately",
+      value: validatedInput.value,
+    });
+    dispatch({
+      type: "questionValidateAfterDelay",
+      value: validatedInput.value,
+    });
 
-                <DefaultInput 
-                    id={styles.questionInput} 
-                    value={question} 
-                    onChange={(e) => InputChangeHandler(e.target.value)} 
-                    type="text" 
-                    name="secondPlayerQuestion" 
-                    placeholder={`ENTER A QUESTION FOR ${firstPlayerUpperCase}`}
-                />
-                <p id={styles.errorMessage}> {validatedInput.errorMessage} </p>
-                <DarkButton onClick={SendHandler} id={styles.sendBtn}> Send </DarkButton>
-            </div>
-        </>
-    )
-}
+    if (!validatedInput.foundError && validatedInput.value.trim() != "") {
+      setMainGameState((draft) => {
+        draft.currentStage = "STAGE_3";
+        draft.latestQuestion = question.trim();
+      });
+    }
+  };
 
-export default SecondPlayerQuestion
+  const InputChangeHandler = (value) => {
+    dispatch({ type: "questionValidateImmediately", value: value });
+    setQuestion(value);
+  };
+
+  return (
+    <>
+      <div className="mainTitle">{secondPlayer}&apos;s turn</div>
+      <div>
+        <div id={styles.content}>
+          {mainGameState.latestAnswer == "NO" ? (
+            <>
+              <p id={styles.wrongGuess}> Wrong Guess </p>
+              <p> Ask {firstPlayer} for another hint </p>
+            </>
+          ) : (
+            <p> Ask {firstPlayer} a question to figure out the word</p>
+          )}
+        </div>
+
+        <DefaultInput
+          id={styles.questionInput}
+          value={question}
+          onChange={(e) => InputChangeHandler(e.target.value)}
+          type="text"
+          name="secondPlayerQuestion"
+          placeholder={`ENTER A QUESTION FOR ${firstPlayerUpperCase}`}
+        />
+        <p id={styles.errorMessage}> {validatedInput.errorMessage} </p>
+        <DarkButton onClick={SendHandler} id={styles.sendBtn}>
+          {" "}
+          Send{" "}
+        </DarkButton>
+      </div>
+    </>
+  );
+};
+
+export default SecondPlayerQuestion;

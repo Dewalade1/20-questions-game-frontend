@@ -1,73 +1,72 @@
-
 .button {
-    margin-top: .5em !important;
+  margin-top: 0.5em !important;
 }
 
 #contentArea {
-    text-align: center;
+  text-align: center;
 }
 
 #errorMessage {
-    color: #FF99AA;
-    font-size: 1em;
-    font-weight: bold;
-    padding: .1em;
-    text-align: center;
+  color: #ff99aa;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.1em;
+  text-align: center;
 }
 
 .textArea {
-    font-size: 1.3em;
-    font-weight: bold;
-    padding-top: .1em;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-top: 0.1em;
 }
 
 #title {
-    padding-top: 70px;
+  padding-top: 70px;
 }
 
 #formArea {
-    padding-top: .5em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 24em;
+  padding-top: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 24em;
 }
 
 #guessInput {
-    margin-bottom: .5em;
-    margin-top: .5em;
-    width: 95%;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  width: 95%;
 }
 
 #guessBtn {
-    margin: .5em 0 0 0;
-    width: 95%;
+  margin: 0.5em 0 0 0;
+  width: 95%;
 }
 
 @media only screen and (max-width: 767.98px) {
-    #contentArea {
-        margin-left: auto;
-        margin-right: auto;
-        width: 65vw;
-    }
+  #contentArea {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65vw;
+  }
 
-    .button {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: 70vw !important;
-    }
+  .button {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 70vw !important;
+  }
 }
 
 @media only screen and (max-width: 575.98px) {
-    #contentArea {
-        height: 47vh;
-        width: 75vw;
-    }
+  #contentArea {
+    height: 47vh;
+    width: 75vw;
+  }
 
-    .button {
-        width: 70vw !important;
-    }
+  .button {
+    width: 70vw !important;
+  }
 
-    #formArea {
-        width: 80vw;
-    }
+  #formArea {
+    width: 80vw;
+  }
 }
