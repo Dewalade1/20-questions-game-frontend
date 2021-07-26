@@ -44,14 +44,14 @@ const PlayerSignup = ({gameState , changeState}) => {
                     draft.playerOne.errorMessage = "Player 1 name cannot be longer than 15 characters"
                 }
                 if (draft.playerOne.value && !/^([a-zA-Z0-9]+)$/.test(draft.playerOne.value)) {
-                    draft.playerOne.hasErrors = true;
+                    draft.playerOne.foundError = true;
                     draft.playerOne.errorMessage = "Player 1 name can only contain letters and numbers.";
                 }
                 break;
 
             case 'player1ValidateAfterDelay':
                 if (draft.playerOne.value.length < 3) {
-                    draft.playerOne.hasErrors = true;
+                    draft.playerOne.foundError = true;
                     draft.playerOne.errorMessage = "Player 1 name must be at least 3 characters long";
                 }
                 break;
@@ -65,29 +65,28 @@ const PlayerSignup = ({gameState , changeState}) => {
                     draft.playerTwo.foundError = true
                     draft.playerTwo.errorMessage = "Player 2 name cannot be a number"
                 }
-                if (draft.playerTwo.value.length > 15) {
+                if (draft.playerTwo.value.length > 10) {
                     draft.playerTwo.foundError = true
-                    draft.playerTwo.errorMessage = "Player 2 name cannot be longer than 15 characters"
+                    draft.playerTwo.errorMessage = "Player 2 name cannot be longer than 10 characters"
                 }
                 if (draft.playerTwo.value && !/^([a-zA-Z0-9]+)$/.test(draft.playerTwo.value)) {
-                    draft.playerTwo.hasErrors = true;
+                    draft.playerTwo.foundError = true;
                     draft.playerTwo.errorMessage = "Player 2 name can only contain letters and numbers.";
                 }
                 break;
 
             case 'player2ValidateAfterDelay':
                 if (draft.playerTwo.value.length < 3) {
-                    draft.playerTwo.hasErrors = true;
+                    draft.playerTwo.foundError = true;
                     draft.playerTwo.errorMessage = "Player 2 name must be at least 3 characters long";
                 }
                 break;
             
             case 'playerNamesAreUnique':
-                draft.playerTwo.foundError = false
 
-                if (draft.playerTwo.value == draft.playerOne.value) {
+                if (draft.playerTwo.value.toLowerCase() == draft.playerOne.value.toLowerCase()) {
                     draft.playerTwo.foundError = true
-                    draft.playerTwo.errorMessage = "Player 2 and player 1 have the same name"
+                    draft.playerTwo.errorMessage = "Player 2 and player 1 must have unique names"
                 }
             default:
                 return draft;
@@ -131,13 +130,14 @@ const PlayerSignup = ({gameState , changeState}) => {
             dispatch({type: 'playerNamesAreUnique', value: state.playerTwo.value})
 
             if (!state.playerTwo.foundError) {
-                setCurrentPlayer('')
-                setInputValue('')
 
                 changeState( (draft) => {
                     draft.currentState = 'PLAY_GAME';
                     draft.playerTwo = inputValue;
-            })
+                })
+
+                setCurrentPlayer('')
+                setInputValue('')
             }
         }
     }
@@ -147,6 +147,7 @@ const PlayerSignup = ({gameState , changeState}) => {
             dispatch({type: 'player1ValidateImmediately', value: value})
         } else if (currentPlayer == 'PLAYER 2') {
             dispatch({type: 'player2ValidateImmediately', value: value})
+            dispatch({type: 'playerNamesAreUnique', value: value})
         }
         setInputValue(value)
     }
