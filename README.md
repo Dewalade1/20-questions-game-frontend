@@ -25,11 +25,24 @@ cd <path-to-repository>/20-questions-game-frontend
 npm i
 ```
 
-4. See `How to start the app` section below to start the app
+4. See `Option 2` in the `How to start the app` section below to start the app
 
 
-## How to Start the app
+## How to start the app
 
 ### Option 1
 
 * The easiest way to start up the app is to [click here](http://20-questions-game-frontend.vercel.app/)
+
+### Option 2
+
+You can start the app locally or run it on a development environment using the following commands:
+* **Start app locally**
+```
+npm start
+```
+
+* **Run on a local dev environment**
+```
+npm run dev
+```
