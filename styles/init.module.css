@@ -1,7 +1,7 @@
 /* BACKGROUNDS */
 
 #blueBackground {
-  background-color: #1368CE;
+  background-color: #1368ce;
   color: #ffffff;
   height: 100vh;
   overflow: hidden;
@@ -9,7 +9,7 @@
 }
 
 #greenBackground {
-  background-color: #26890C;
+  background-color: #26890c;
   color: #ffffff;
   height: 100vh;
   overflow: hidden;
@@ -17,7 +17,7 @@
 }
 
 #redBackground {
-  background-color: #E21B3C;
+  background-color: #e21b3c;
   color: #ffffff;
   height: 100vh;
   overflow: hidden;
@@ -25,7 +25,7 @@
 }
 
 #purpleBackground {
-  background-color: #46178F;
+  background-color: #46178f;
   color: #ffffff;
   height: 100vh;
   overflow: hidden;
@@ -76,7 +76,7 @@
   }
 }
 
-@media only screen and (max-width: 767.98px) { 
+@media only screen and (max-width: 767.98px) {
   /* BACKGROUNDS */
   #blueBackground {
     height: 125vh;

@@ -1,18 +1,17 @@
-
 #buttonArea {
-    text-align: center;
+  text-align: center;
 }
 
 #question {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .buttonIcon {
-    font-weight: bolder;
-    margin-top: auto;
-    margin-bottom: auto;
-    position: relative;
-    top: 5px;
+  font-weight: bolder;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  top: 5px;
 }

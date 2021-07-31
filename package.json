@@ -1,16 +1,21 @@
 {
   "name": "20-questions-game-frontend",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prep": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
     "immer": "^9.0.5",
     "material-design-icons": "^3.0.1",
     "netlify-cli": "^5.2.3",
@@ -22,6 +27,9 @@
   },
   "devDependencies": {
     "eslint": "7.31.0",
-    "eslint-config-next": "11.0.1"
+    "eslint-config-next": "11.0.1",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "prettier": "2.3.2"
   }
 }

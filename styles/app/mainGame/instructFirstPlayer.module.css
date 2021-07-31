@@ -1,43 +1,43 @@
 #mainContent {
-    padding-top: 3em;
-    height: 30vh;
-    text-align: center;
+  padding-top: 3em;
+  height: 30vh;
+  text-align: center;
 }
 
 .text {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 #hint {
-    color: #FFC00A;
-    padding-top: 1.2em;
+  color: #ffc00a;
+  padding-top: 1.2em;
 }
 
 #ready {
-    color: #66BF39
+  color: #66bf39;
 }
 
 @media only screen and (max-width: 767.98px) {
-    #mainContent {
-        margin-left: auto;
-        margin-right: auto;
-        width: 70vw;
-    }
+  #mainContent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+  }
 
-    #readyBtn {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  #readyBtn {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media only screen and (max-width: 575.98px) {
-    #mainContent {
-        height: 47vh;
-        width: 80vw;
-    }
+  #mainContent {
+    height: 47vh;
+    width: 80vw;
+  }
 
-    #readyBtn {
-        width: 70vw;
-    }
- }
+  #readyBtn {
+    width: 70vw;
+  }
+}

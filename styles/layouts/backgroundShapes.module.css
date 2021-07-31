@@ -1,76 +1,76 @@
 /* SHAPES */
 
 .diamond {
-    height: 37em;
-    opacity: 0.6;
-    transform: rotate(45deg);
-    transform-origin: 20em 5em;
-    width: 37em;
+  height: 37em;
+  opacity: 0.6;
+  transform: rotate(45deg);
+  transform-origin: 20em 5em;
+  width: 37em;
 }
 
 .circle {
-    border-radius: 50%;
-    height: 45em;
-    opacity: 0.6;
-    transform: rotate(45deg);
-    transform-origin: 150vh 90vw;
-    width: 45em;
+  border-radius: 50%;
+  height: 45em;
+  opacity: 0.6;
+  transform: rotate(45deg);
+  transform-origin: 150vh 90vw;
+  width: 45em;
 }
 
 /* SHAPE COLORS */
 
 #blueShape {
-  background-color: #0542B9;
+  background-color: #0542b9;
 }
 
 #greenShape {
-  background-color: #0542B9;
+  background-color: #0542b9;
 }
 
 #redShape {
-  background-color: #C60929;
+  background-color: #c60929;
 }
 
 #purpleShape {
-  background-color: #25076B;
+  background-color: #25076b;
 }
 
 @media only screen and (max-width: 991.98px) {
-    .diamond {
-        height: 35em;
-        width: 35em;
-    }
+  .diamond {
+    height: 35em;
+    width: 35em;
+  }
 
-    .circle {
-        height: 38em;
-        transform-origin: 95vh 90vw;
-        width: 38em;
-    }
- }
+  .circle {
+    height: 38em;
+    transform-origin: 95vh 90vw;
+    width: 38em;
+  }
+}
 
-@media only screen and (max-width: 767.98px) { 
-    .diamond {
-        height: 28em;
-        width: 28em;
-    }
+@media only screen and (max-width: 767.98px) {
+  .diamond {
+    height: 28em;
+    width: 28em;
+  }
 
-    .circle {
-        height: 34em;
-        transform-origin: 70vh 90vw;
-        width: 34em;
-    }
+  .circle {
+    height: 34em;
+    transform-origin: 70vh 90vw;
+    width: 34em;
+  }
 }
 
 @media only screen and (max-width: 575.98px) {
-    .diamond {
-        height: 19em !important;
-        transform-origin: 10em 2em;
-        width: 19em !important;
-    }
+  .diamond {
+    height: 19em !important;
+    transform-origin: 10em 2em;
+    width: 19em !important;
+  }
 
-    .circle {
-        height: 26em !important;
-        transform-origin: 0vh 100vw;
-        width: 26em !important;
-    }
- }
+  .circle {
+    height: 26em !important;
+    transform-origin: 0vh 100vw;
+    width: 26em !important;
+  }
+}
