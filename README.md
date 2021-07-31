@@ -7,6 +7,14 @@
 - [Vercel](https://vercel.com) - for hosting the app
 - [Git and GitHub](https://git-scm.com) - for tracking, storage and version control
 
+## How I worked on this Project
+
+* I built the app based on the `Kahoot` website design: [Link to website](https://kahoot.it/)
+* I used feature branches and pull requests in this Project
+    * [Example PRs](https://github.com/Dewalade1/20-questions-game-frontend/pulls?q=is%3Apr+is%3Aclosed)
+    * [Example Branches](https://github.com/Dewalade1/20-questions-game-frontend/branches)
+* I worked documented and fixed bugs using GitHub Issues: [Example Issues](https://github.com/Dewalade1/20-questions-game-frontend/issues)
+
 ## How to setup the app
 
 ### Option 1

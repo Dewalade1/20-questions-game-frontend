@@ -141,5 +141,7 @@ dist
 
 # Misc folders and files
 .vscode
+.husky
+
 # Local Netlify folder
 .netlify
