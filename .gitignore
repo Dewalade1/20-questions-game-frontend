@@ -142,6 +142,7 @@ dist
 # Misc folders and files
 .vscode
 .husky
+sentry.properties
 
 # Local Netlify folder
 .netlify
